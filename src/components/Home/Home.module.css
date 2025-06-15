@@ -1,0 +1,81 @@
+.main {
+  background-image: url(../../assets/hero_image.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+
+  padding-top: 68px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.banner {
+  /* position: absolute;
+  bottom: 60px;
+  left: 328px; */
+
+  margin-top: 436px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.action {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.2;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.slogan {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.button {
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 276px;
+  height: 44px;
+  background: #3470ff;
+
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.button:hover {
+  background: #5a91ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.button:focus {
+  background: #5a91ff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 3px rgba(52, 112, 255, 0.5);
+}
+
+.button__link {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #fff;
+  text-decoration: none;
+}

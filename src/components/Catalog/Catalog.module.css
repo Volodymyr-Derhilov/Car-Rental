@@ -1,0 +1,67 @@
+.catalog {
+  padding-top: 152px;
+  margin-left: 120px;
+  margin-right: 120px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filterForm {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-bottom: 56px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.span {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33333;
+  color: #8d929a;
+}
+
+.field {
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 12px 16px;
+  width: 204px;
+  height: 44px;
+  border: none;
+  outline: none;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.field::placeholder {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.button {
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  padding: 12px 51px;
+  width: 156px;
+  height: 44px;
+  background: #3470ff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #fff;
+  cursor: pointer;
+
+  margin-top: 16px;
+}
