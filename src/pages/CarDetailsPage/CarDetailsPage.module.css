@@ -1,0 +1,20 @@
+.details__section {
+  display: flex;
+  gap: 72px;
+  padding: 152px 120px 104px;
+}
+
+.left {
+  width: 640px;
+}
+
+.right {
+  width: 488px;
+}
+
+.img {
+  border-radius: 19px;
+  width: 640px;
+  height: 512px;
+  margin-bottom: 40px;
+}

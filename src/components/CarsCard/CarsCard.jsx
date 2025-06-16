@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom";
 import css from "./CarsCard.module.css";
 
 export default function CarsCard({ car }) {
   const location = car.address.split(",");
+
+  console.log(car);
   return (
     <>
       <img src={car.img} alt={car.description} className={css.img} />
@@ -23,6 +26,12 @@ export default function CarsCard({ car }) {
             {car.type} <span className={css.line}>|</span> {car.mileage}
           </p>
         </div>
+
+        <button type="button" className={css.button}>
+          <Link to={`/catalog/${car.id}`} className={css.link}>
+            Read more
+          </Link>
+        </button>
       </div>
     </>
   );
