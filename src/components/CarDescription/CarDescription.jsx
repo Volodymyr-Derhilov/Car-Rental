@@ -32,7 +32,9 @@ export default function CarDescription({ car }) {
             </p>
           </div>
 
-          <p className={css.area}>Mileage: {car.mileage} km</p>
+          <p className={css.area}>
+            Mileage: {car.mileage.toLocaleString("en-US").replace(/,/g, " ")} km
+          </p>
         </div>
 
         <span className={css.price}>${car.rentalPrice}</span>

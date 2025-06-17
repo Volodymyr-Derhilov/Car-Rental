@@ -4,10 +4,15 @@ import { useEffect } from "react";
 import { fetchBrands } from "../../redux/filters/operations";
 import { selectBrands, selectPrices } from "../../redux/filters/selectors";
 import { Field, Form, Formik } from "formik";
-import { resetFilters, setFilters } from "../../redux/filters/filtersSlice";
+import {
+  resetFilters,
+  setFilters,
+  setPage
+} from "../../redux/filters/filtersSlice";
 import { fetchCars } from "../../redux/cars/operations";
 import CarsList from "../CarsList/CarsList";
 import { selectCars, selectIsLoading } from "../../redux/cars/selectors";
+import { resetCars } from "../../redux/cars/carsSlice";
 
 export default function Catalog() {
   const dispatch = useDispatch();
@@ -18,9 +23,19 @@ export default function Catalog() {
 
   useEffect(() => {
     dispatch(resetFilters());
+    dispatch(resetCars());
     dispatch(fetchBrands());
     dispatch(fetchCars());
   }, [dispatch]);
+
+  const onClick = () => {
+    const scrollY = window.scrollY;
+
+    dispatch(setPage());
+    dispatch(fetchCars({ append: true })).then(() => {
+      window.scrollTo({ top: scrollY, behavior: "auto" });
+    });
+  };
 
   return (
     <section className={css.catalog}>
@@ -33,6 +48,7 @@ export default function Catalog() {
         }}
         onSubmit={(values) => {
           dispatch(setFilters(values));
+          dispatch(fetchCars());
         }}
       >
         <Form className={css.filterForm}>
@@ -88,7 +104,7 @@ export default function Catalog() {
       {isLoading ? (
         <p>Loading cars...</p>
       ) : cars.length > 0 ? (
-        <CarsList cars={cars} />
+        <CarsList cars={cars} onClick={onClick} />
       ) : (
         <p>No cars found</p>
       )}

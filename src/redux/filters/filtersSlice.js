@@ -22,6 +22,9 @@ const slice = createSlice({
     },
     resetFilters(state) {
       state.filters = initialState.filters;
+    },
+    setPage(state) {
+      state.filters.page += 1;
     }
   },
   extraReducers: (builder) => {
@@ -32,4 +35,4 @@ const slice = createSlice({
 });
 
 export const filtersReduser = slice.reducer;
-export const { setFilters, resetFilters } = slice.actions;
+export const { setFilters, resetFilters, setPage } = slice.actions;
